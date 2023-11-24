@@ -1,3 +1,5 @@
+package br.com.musicplatform.modelos;
+
 public class Audio {
     //Atributos
     private String titulo;
@@ -8,7 +10,7 @@ public class Audio {
 
     //Método Construtor
 
-    public Audio(String titulo, int duracao, int totalReproducao, int curtidas, int classificao) {
+    public Audio(String titulo, int duracao) {
         this.titulo = titulo;
         this.duracao = duracao;
         this.totalReproducao = 0;
@@ -19,12 +21,12 @@ public class Audio {
     //Métodos Encapsulados
     public void repoduzir(){
         //A cada reproduzir contar um
-        totalReproducao++;
+        this.totalReproducao++;
         System.out.println("Reproduzindo: " + titulo);
     }
 
     public void curtir(){
-        curtidas++;
+        this.curtidas++;
         System.out.println("Curtiu + " + curtidas);
     }
 
@@ -37,6 +39,10 @@ public class Audio {
 
     //Métodos Getters
 
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
     public String getTitulo() {
         return titulo;
